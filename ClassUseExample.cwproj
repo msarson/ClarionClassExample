@@ -1,0 +1,52 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{45D18359-228D-4F40-902A-24F13C799E3E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Win32</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>ClassUseExample</AssemblyName>
+    <OutputName>ClassUseExample</OutputName>
+    <DefineConstants>_ABCDllMode_=&gt;0%3b_ABCLinkMode_=&gt;1%3b</DefineConstants>
+    <Model>Dll</Model>
+    <stack_size>16384</stack_size>
+    <CopyCore>True</CopyCore>
+    <ApplicationIcon>Teacher1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <vid>full</vid>
+    <check_stack>True</check_stack>
+    <check_index>True</check_index>
+    <GenerateMap>True</GenerateMap>
+    <line_numbers>True</line_numbers>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <vid>off</vid>
+    <check_stack>False</check_stack>
+    <check_index>False</check_index>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ClassUseExample.clw">
+      <Generated>true</Generated>
+    </Compile>
+    <Compile Include="ClassUseExample001.clw">
+      <Generated>true</Generated>
+    </Compile>
+    <Compile Include="CLASSUSEEXAMPLE_BC.CLW">
+      <Generated>true</Generated>
+    </Compile>
+    <Compile Include="ClassUseExample_BC0.CLW">
+      <Generated>true</Generated>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="ClassUseExample.EXE.manifest" />
+    <Library Include="Kernel32.lib" />
+    <FileDriver Include="DOS" />
+    <FileDriver Include="TOPSPEED" />
+  </ItemGroup>
+  <Import Project="$(ClarionBinPath)\SoftVelocity.Build.Clarion.targets" />
+</Project>
