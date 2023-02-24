@@ -1,5 +1,5 @@
 # ClarionClassExample
-Simple example app compiled with Clarion 8.
+Simple example app compiled with Clarion 8 and Clarion 6.
 
 <img src="https://github.com/donridley1972/ClarionClassExample/blob/main/screenshots/ScreenHunter%2080.png" width=600/>
 
